@@ -1,0 +1,32 @@
+{
+  "name": "boltjs-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A basic and dynamic template for Bolt.js apps using Typescript and pnpm.",
+  "keywords": [],
+  "homepage": "https://github.com/DaInfLoop/boltjs-template#readme",
+  "bugs": {
+    "url": "https://github.com/DaInfLoop/boltjs-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaInfLoop/boltjs-template.git"
+  },
+  "license": "MIT",
+  "author": "DaInfLoop <mail@dainfloop.is-a.dev>",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npx tsx ."
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.4.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.24",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@10.10.0"
+}
