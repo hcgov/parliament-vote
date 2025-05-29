@@ -4,7 +4,7 @@ A Slack bot that handles voting for Hack Club's mock parliament.
 ## Installation
 1. Clone the repository:
 ```sh
-$ git clone https://github.com/DaInfLoop/parliament-vote.git
+$ git clone https://github.com/hcgov/parliament-vote.git
 ```
 
 2. Rename `.env.example` to `.env` and fill in the necessary details:

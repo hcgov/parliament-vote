@@ -1,16 +1,16 @@
 {
-  "name": "boltjs-template",
+  "name": "parliament-vote",
   "version": "1.0.0",
   "private": true,
-  "description": "A basic and dynamic template for Bolt.js apps using Typescript and pnpm.",
+  "description": "A Slack bot that handles voting for Hack Club's mock parliament.",
   "keywords": [],
-  "homepage": "https://github.com/DaInfLoop/boltjs-template#readme",
+  "homepage": "https://github.com/hcgov/parliament-vote#readme",
   "bugs": {
-    "url": "https://github.com/DaInfLoop/boltjs-template/issues"
+    "url": "https://github.com/hcgov/parliament-vote/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DaInfLoop/boltjs-template.git"
+    "url": "git+https://github.com/hcgov/parliament-vote.git"
   },
   "license": "MIT",
   "author": "DaInfLoop <mail@dainfloop.is-a.dev>",
