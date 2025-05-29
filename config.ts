@@ -1,4 +1,13 @@
 /*
+    Parliament Vote specific configuration variables.
+
+    You should not need to edit anything in the section below 
+    unless you are adding new features with disabled imports.
+*/
+export const FETCH_WORKFLOW = "";
+export const  EDIT_WORKFLOW = "";
+
+/*
     This is a config file for the Bolt template. As of version v1, this only supports toggling what interactions are imported or not.
 */
 
@@ -10,7 +19,7 @@ export const interactionImports = {
     commands: true,
 
     // Events via Event Subscriptions.
-    events: true,
+    events: false,
 
     // Slack functions are custom workflow steps.
     functions: true,

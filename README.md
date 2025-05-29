@@ -1,10 +1,10 @@
-# Slack Bolt.js Template
-A basic and dynamic template for Bolt.js apps using Typescript and pnpm.
+# Hack Club Parliament Vote Bot
+A Slack bot that handles voting for Hack Club's mock parliament.
 
 ## Installation
-1. Clone the template:
+1. Clone the repository:
 ```sh
-$ git clone https://github.com/DaInfLoop/boltjs-template.git
+$ git clone https://github.com/DaInfLoop/parliament-vote.git
 ```
 
 2. Rename `.env.example` to `.env` and fill in the necessary details:
@@ -35,11 +35,23 @@ NGROK_DOMAIN=""
 $ pnpm i
 ```
 
-4. The template is now set up! 
+4. Create a Postgres database and edit `postgres.ts` with information about said database. Create a table called `votes` (which can easily be done by copy-pasting this into a Postgres REPL like `psql`):
+```sql
+CREATE TABLE votes (
+    list_row_id TEXT NOT NULL,
+    party TEXT NOT NULL,
+    seats INTEGER NOT NULL,
+    in_favor BOOLEAN NOT NULL
+);
+```
 
-Create files in `src/<interaction type>` following the templates in each folder and go code on!
+5. Edit `config.ts` and add workflow URLs for:
+    - fetching from the "Bills and Propositions" list
+    - editing the "Bills and Propositions" list
 
-Your file name should be `<command/action/view/event/... name>.ts` in order for it to be loaded properly.
+    For testing cases, you can message in the `#dosem` channel on the Hack Club Slack and get a copy of the workflows for use on a dummy list.
+
+6. The bot should now be set up! 
 
 ## License
-This template is licensed under the MIT License. A copy of the license can be viewed at [LICENSE](/LICENSE).
+This repository and the [underlying template](https://github.com/DaInfLoop/boltjs-template) is licensed under the MIT License. A copy of the license can be viewed at [LICENSE](/LICENSE).

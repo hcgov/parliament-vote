@@ -14,6 +14,9 @@ importers:
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
+      postgres:
+        specifier: ^3.4.7
+        version: 3.4.7
     devDependencies:
       '@types/node':
         specifier: ^22.15.24
@@ -556,6 +559,13 @@ packages:
     resolution: {integrity: sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==}
     engines: {node: '>=16'}
 
+<<<<<<< HEAD
+=======
+  postgres@3.4.7:
+    resolution: {integrity: sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==}
+    engines: {node: '>=12'}
+
+>>>>>>> 6d98ce3 (Edit template to baseplate for Parliament Vote)
   proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
@@ -1216,6 +1226,11 @@ snapshots:
 
   path-to-regexp@8.2.0: {}
 
+<<<<<<< HEAD
+=======
+  postgres@3.4.7: {}
+
+>>>>>>> 6d98ce3 (Edit template to baseplate for Parliament Vote)
   proxy-addr@2.0.7:
     dependencies:
       forwarded: 0.2.0
