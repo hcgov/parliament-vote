@@ -39,9 +39,9 @@ $ pnpm i
 ```sql
 CREATE TABLE votes (
     list_row_id TEXT NOT NULL,
-    party TEXT NOT NULL,
+    userId TEXT NOT NULL,
     seats INTEGER NOT NULL,
-    in_favor BOOLEAN NOT NULL
+    in_favour BOOLEAN NOT NULL
 );
 ```
 
