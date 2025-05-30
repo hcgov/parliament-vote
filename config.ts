@@ -7,7 +7,7 @@ export const interactionImports = {
     actions: true,
 
     // Slash commands.
-    commands: true,
+    commands: false,
 
     // Events via Event Subscriptions.
     events: false,
@@ -19,5 +19,5 @@ export const interactionImports = {
     shortcuts: false,
 
     // Submission of modals and app home views.
-    views: true
+    views: false
 };
