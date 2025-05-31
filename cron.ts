@@ -72,6 +72,7 @@ cron.schedule('0 0 * * *', async () => {
             })
 
             await sql`DELETE FROM proposition_end_dates WHERE list_row_id = ${proposition.list_row_id}`;
+            await sql`DELETE FROM votes WHERE list_row_id = ${proposition.list_row_id}`;
         }
     }
 })
