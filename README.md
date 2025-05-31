@@ -60,13 +60,7 @@ CREATE TABLE proposition_end_dates (
 );
 ```
 
-5. Edit `config.ts` and add workflow URLs for:
-    - fetching from the "Bills and Propositions" list
-    - editing the "Bills and Propositions" list
-
-    For testing cases, you can message in the `#dosem` channel on the Hack Club Slack and get a copy of the workflows for use on a dummy list.
-
-6. The bot should now be set up! 
+5. The bot should now be set up! 
 
 ## License
 This repository and the [underlying template](https://github.com/DaInfLoop/boltjs-template) is licensed under the MIT License. A copy of the license can be viewed at [LICENSE](/LICENSE).
