@@ -14,6 +14,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
 
         await ctx.client.chat.postMessage({
             channel: process.env.CHAMBER_CHANNEL_ID,
+            text: `Voting is now open for the "${title}" ${type}.`,
             blocks: [
                 {
                     "type": "rich_text",
@@ -50,7 +51,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
                                 },
                                 {
                                     "type": "text",
-                                    "text": "\n\nView more about this proposition and vote if you support it. This bill/act will need 2/3rds of the total votes submitted, unless the PM votes in favor, in which case 1/2 of the total votes will be needed. If you take issue, follow the link below and use comments to debate. It is your duty to vote, either yes or no.\n\nVotes are by seats, not members.\n\n"
+                                    "text": "\n\nView more about this proposition and vote if you support it. This bill/act will need 2/3rds of the total votes submitted, unless the PM votes in favor, in which case 1/2 of the total votes will be needed. If you take issue, follow the link below and use comments to debate. It is your duty to vote, either yes or no.\n\nVotes are by seats, not members.\n"
                                 }
                             ]
                         }
@@ -97,7 +98,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
                             },
                             "style": "danger",
                             "value": inputs.itemId,
-                            "action_id": "vote-not-in-favor"
+                            "action_id": "vote-not-in-favour"
                         }
                     ]
                 }
