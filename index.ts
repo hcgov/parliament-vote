@@ -14,7 +14,7 @@ if (config.interactionImports.actions) {
     const actionsDir = await fs.readdir(path.join(process.cwd(), "src", "actions"));
     for (const action of actionsDir) {
         if (!action.endsWith(".ts") || action.endsWith(".template.ts")) continue;
-        const actionExport = await import(path.join(process.cwd(), "src", "action", action));
+        const actionExport = await import(path.join(process.cwd(), "src", "actions", action));
 
         const actionName = path.basename(action, ".ts")
 
