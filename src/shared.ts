@@ -24,6 +24,21 @@ export async function voting(ctx: SlackActionMiddlewareArgs<BlockButtonAction> &
     // How many seats the user has: this may be inaccurate if there are multiple seatholders
     const seats = Math.floor(userParty.seats / userParty.seatholders.length);
 
+    const propositionRes = await sql<{
+        list_row_id: string,
+        end_date: Date,
+        message_ts: string
+    }[]>`SELECT * FROM proposition_end_dates WHERE list_row_id = ${rowId}`;
+
+    if (propositionRes.length == 0) {
+        return await ctx.client.chat.postEphemeral({
+            channel: process.env.CHAMBER_CHANNEL_ID,
+            user: userId,
+            // Hey @user, this proposition's voting period has ended. If this is a mistake, please reach out in #dosem.
+            text: `Hey <@${userId}>, this proposition's voting period has ended. If this is a mistake, please reach out in <#C08HSAVG482>.`
+        })
+    }
+
     // Has this user already voted?
     const result = await sql<{ 
         list_row_id: string, 
