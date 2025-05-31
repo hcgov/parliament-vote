@@ -70,7 +70,6 @@ DO UPDATE SET
     return await ctx.client.chat.postEphemeral({
         channel: process.env.CHAMBER_CHANNEL_ID,
         user: userId,
-        // Hey @user, you already voted not in favour of this proposition. If this is a mistake, please reach out in #dosem.
         text: `:white_check_mark: Your vote has gone through with *${seats}* seats!`
     })
 }
