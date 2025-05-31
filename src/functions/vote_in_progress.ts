@@ -17,6 +17,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
             // Change the status back to "In Draft"
         
             const uuid2 = randomUUID()
+            ee.once(uuid2, () => {})
             await fetch(process.env.EDIT_WORKFLOW, {
                 method: 'POST',
                 headers: {
@@ -45,6 +46,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
             // Change the status back to "In Draft"
         
             const uuid2 = randomUUID()
+            ee.once(uuid2, () => {})
             await fetch(process.env.EDIT_WORKFLOW, {
                 method: 'POST',
                 headers: {
