@@ -64,7 +64,7 @@ DO UPDATE SET
     await ctx.client.chat.postMessage({
         channel: process.env.CHAMBER_CHANNEL_ID,
         thread_ts: ctx.body.message!.ts,
-        text: `${userParty} - ${seats} - ${favour == "in_favour" ? "Yes" : "No"}\n\n_On behalf of <@${userId}>_`
+        text: `${userParty.shortName} - ${seats} - ${favour == "in_favour" ? "Yes" : "No"}\n\n_On behalf of <@${userId}>_`
     })
 
     return await ctx.client.chat.postEphemeral({

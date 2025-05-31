@@ -17,7 +17,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "start": "npx tsx ."
+    "start": "pnpm exec tsx ."
   },
   "dependencies": {
     "@slack/bolt": "^4.4.0",
@@ -29,5 +29,5 @@
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.11.0"
 }
