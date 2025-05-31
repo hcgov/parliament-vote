@@ -84,17 +84,17 @@ if (config.interactionImports.views) {
 
 app.start(process.env.PORT ?? 3000).then(async () => {
     console.log(`⚡ Bolt app is running in ${process.env.NODE_ENV} mode!`)
-
+    
     if (process.env.NODE_ENV == "development" && process.env.NGROK_TOKEN != "NONE") {
         const ngrok = await import("@ngrok/ngrok");
-
+        
         if (!process.env.NGROK_TOKEN) {
             app.stop();
             console.error("❌ You're running in development mode, but no NGROK_TOKEN was found in your .env file.")
             console.error("Not planning to use ngrok functionality? Set NGROK_TOKEN to NONE (case-sensitive!)")
             process.exit(1)
         }
-
+        
         try {
             const listener = await ngrok.forward({
                 addr: process.env.PORT ?? 3000,
@@ -110,3 +110,6 @@ app.start(process.env.PORT ?? 3000).then(async () => {
         }
     }
 })
+
+export { app }
+import './cron';

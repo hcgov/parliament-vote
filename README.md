@@ -42,7 +42,7 @@ EDIT_WORKFLOW="https://hooks.slack.com/triggers/T0266FRGM/..."
 $ pnpm i
 ```
 
-4. Create a Postgres database and edit `postgres.ts` with information about said database. Create a table called `votes` (which can easily be done by copy-pasting this into a Postgres REPL like `psql`):
+4. Create a Postgres database and edit `postgres.ts` with information about said database. Create 2 tables called `votes` and `proposition_end_dates` (which can easily be done by copy-pasting this into a Postgres REPL like `psql`):
 ```sql
 CREATE TABLE votes (
     list_row_id TEXT NOT NULL,
@@ -51,6 +51,12 @@ CREATE TABLE votes (
     in_favour BOOLEAN NOT NULL,
 
     UNIQUE (list_row_id, user_id)
+);
+
+CREATE TABLE proposition_end_dates (
+    list_row_id TEXT NOT NULL,
+    end_date DATE NOT NULL,
+    message_ts TEXT NOT NULL
 );
 ```
 
