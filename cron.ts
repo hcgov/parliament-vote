@@ -12,7 +12,7 @@ cron.schedule('0 0 * * *', async () => {
         list_row_id: string, 
         end_date: Date, 
         message_ts: string
-    }[]>`SELECT * FROM proposition_end_dates WHERE end_date = CURRENT_DATE`;
+    }[]>`SELECT * FROM proposition_end_dates WHERE end_date <= CURRENT_DATE`;
 
     if (propositions.length) {
         for (const proposition of propositions) {
