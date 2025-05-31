@@ -168,7 +168,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
         })
 
         if (message.ok) {
-            await sql`INSERT INTO proposition_end_dates VALUES (${inputs.itemId}, ${new Date(date_closes)}, ${message.ts!})`
+            await sql`INSERT INTO proposition_end_dates VALUES (${inputs.itemId}, ${date_closes}, ${message.ts!})`
         }
 
         await ctx.complete({ outputs: {} })
