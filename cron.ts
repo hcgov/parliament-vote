@@ -44,10 +44,10 @@ cron.schedule('0 0 * * *', async () => {
 
                 if (primeMinisterVote && primeMinisterVote.in_favour) {
                     // Needs 1/2 total votes to pass
-                    return inFavourSeats > (votes.length * (1/2))
+                    return inFavourSeats > ((inFavourSeats + againstSeats) * (1/2))
                 } else {
                     // Needs 2/3 total votes to pass
-                    return inFavourSeats > (votes.length * (2/3)) 
+                    return inFavourSeats > ((inFavourSeats + againstSeats) * (2/3)) 
                 }
             })();
 
