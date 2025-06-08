@@ -2,7 +2,6 @@
 export enum PartiesEnum {
     // Parties
     HCP,
-    hUWUp,
     HGP,
     WME,
     HDP,
@@ -34,15 +33,6 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         ],
         shortName: "HCP",
         seats: 40
-    },
-
-    [PartiesEnum.hUWUp]: {
-        name: "Hack Club UwU Party",
-        seatholders: [
-            'U08EMT46G3V', // Lynn
-        ],
-        shortName: "hUwUp",
-        seats: 14
     },
 
     [PartiesEnum.HGP]: {
@@ -114,7 +104,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             'U06TBP41C3E', // Loop
         ],
         shortName: "(Independent) Loop",
-        seats: 10
+        seats: 24
     },
 
     [PartiesEnum.Peanut]: {
