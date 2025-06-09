@@ -11,7 +11,6 @@ export enum PartiesEnum {
 
     // Independent Candidates
     Ryan,
-    Loop,
 
     // Peanut Gallery
     Peanut,
@@ -59,7 +58,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             'U08B60DCYG2', // Manni
         ],
         shortName: "HDP",
-        seats: 7
+        seats: 31
     },
 
     [PartiesEnum.HCRP]: {
@@ -96,15 +95,6 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         ],
         shortName: "(Independent) Ryan",
         seats: 21
-    },
-
-    [PartiesEnum.Loop]: {
-        name: "(Independent) Loop",
-        seatholders: [
-            'U06TBP41C3E', // Loop
-        ],
-        shortName: "(Independent) Loop",
-        seats: 24
     },
 
     [PartiesEnum.Peanut]: {
