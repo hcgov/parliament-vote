@@ -39,7 +39,32 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
         }
 
         if (date_closes == "") {
-            // Change the status back to "In Draft" 
+            // Change the status back to "In Draft"
+        
+            const uuid2 = randomUUID()
+            ee.once(uuid2, () => {})
+            await fetch(process.env.EDIT_WORKFLOW, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    uuid: uuid2,
+                    row_id: inputs.itemId,
+                    status: "In Draft"
+                })
+            })
+
+            // Adds 2 days to the "current date" to get the recommended "vote close date"
+            const recommendedDate = new Date();
+            recommendedDate.setDate(recommendedDate.getDate() + 2)
+
+            return await ctx.client.chat.postMessage({
+                channel: inputs.editor,
+                text: 
+                    `Hi there! You updated the status of *<${itemUrl}|${title}>* to \`Voting Open\`. However, that proposition doesn't have a date set for when the vote closes.\n\n` +
+                    `In order to allow the Parliament Vote bot to work properly, you need to have a date set. For most propositions, this is 2 days from the current date (which in this case, is \`${recommendedDate.toISOString().slice(0, 10)}\`).`
+            })   
         } else if (new Date(date_closes) < new Date()) {
             // Change the status back to "In Draft"
         
