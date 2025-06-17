@@ -102,7 +102,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         seatholders: [
             'U089924LMK8', // Astra
             'U079YUX7220', // Lenny
-            'U0803JALC6L', // Lynn
+            'U08EMT46G3V', // Lynn
         ],
         shortName: "Peanut Gallery",
         seats: 3
