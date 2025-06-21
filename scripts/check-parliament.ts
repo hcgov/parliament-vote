@@ -15,7 +15,7 @@ for (const party of Object.values(Parties)) {
         if (process.env.SEND_SLACK_NOTIFICATION === 'true') {
             await client.chat.postMessage({
                 channel: process.env.DOSEM_CHANNEL_ID,
-                text: `\<!subteam^S0929EK5LGL\>, error in commit <https://github.com/${process.env.GITHUB_REPOSITORY}/commit/${process.env.GITHUB_SHA}|${process.env.GITHUB_SHA?.slice(0, 7)}>`,
+                text: `<!subteam^S0929EK5LGL>, error in commit <https://github.com/${process.env.GITHUB_REPOSITORY}/commit/${process.env.GITHUB_SHA}|${process.env.GITHUB_SHA?.slice(0, 7)}>`,
                 attachments: [
                     {
                         color: "#ff0000",

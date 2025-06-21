@@ -14,8 +14,6 @@ export enum PartiesEnum {
 
     // Peanut Gallery
     Peanut,
-
-    TESTPARTY,
 }
 
 export type PartyInformation = {
@@ -31,6 +29,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         seatholders: [
             { userId: 'U0807ADEC6L', seats: 20 }, // Manan
             { userId: 'U07E4196AMA', seats: 20 }, // Souptik
+            { userId: 'U07NXNK171N', seats: 1 } // Taran
         ],
         shortName: "HCP",
         seats: 40
