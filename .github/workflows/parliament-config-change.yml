@@ -21,17 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run scripts/check-parliament.ts
         env:
             SEND_SLACK_NOTIFICATION: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
             APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
-            DOSEM_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-        run: pnpm tsx scripts/check-parliament.ts
+            DOSEM_CHANNEL_ID: ${{ vars.DOSEM_CHANNEL_ID }}
+        run: npx tsx scripts/check-parliament.ts
