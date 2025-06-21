@@ -14,11 +14,13 @@ export enum PartiesEnum {
 
     // Peanut Gallery
     Peanut,
+
+    TESTPARTY,
 }
 
 export type PartyInformation = {
     name: string,
-    seatholders: string[]
+    seatholders: { userId: string, seats: number }[],
     shortName: string,
     seats: number
 }
@@ -27,8 +29,8 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.HCP]: {
         name: "Hack Club Communist Party",
         seatholders: [
-            'U0807ADEC6L', // Manan
-            'U07E4196AMA', // Souptik
+            { userId: 'U0807ADEC6L', seats: 20 }, // Manan
+            { userId: 'U07E4196AMA', seats: 20 }, // Souptik
         ],
         shortName: "HCP",
         seats: 40
@@ -37,7 +39,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.HGP]: {
         name: "Hack Club Gay Party",
         seatholders: [
-            'U06JLP2R8JV', // Firepup
+            { userId: 'U06JLP2R8JV', seats: 9 }, // Firepup
         ],
         shortName: "HGP",
         seats: 9
@@ -46,7 +48,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.WME]: {
         name: "Church of Windows M.E.",
         seatholders: [
-            'U07F2P4EDBP', // Lucas
+            { userId: 'U07F2P4EDBP', seats: 7 }, // Lucas
         ],
         shortName: "WME",
         seats: 7
@@ -55,7 +57,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.HDP]: {
         name: "Hack Club Dino Party",
         seatholders: [
-            'U08B60DCYG2', // Manni
+            { userId: 'U08B60DCYG2', seats: 31 }, // Manni
         ],
         shortName: "HDP",
         seats: 31
@@ -64,7 +66,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.HCRP]: {
         name: "Hack Club Republic Party",
         seatholders: [
-            'U083T3ZP6AV', // Navdeep
+            { userId: 'U083T3ZP6AV', seats: 12 }, // Navdeep
         ],
         shortName: "HCRP",
         seats: 12
@@ -73,7 +75,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.Colon3]: {
         name: ":3 Party",
         seatholders: [
-            'U08JMV3PEGN', // Emma
+            { userId: 'U08JMV3PEGN', seats: 22 }, // Emma
         ],
         shortName: ":3",
         seats: 22
@@ -82,7 +84,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.HCLP]: {
         name: "Hack Club Linux Party",
         seatholders: [
-            'U07H41WMEEL', // Samannoy
+            { userId: 'U07H41WMEEL', seats: 10 }, // Samannoy
         ],
         shortName: "HCLP",
         seats: 10
@@ -91,7 +93,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.Ryan]: {
         name: "(Independent) Ryan",
         seatholders: [
-            'U07NKS9S8GZ', // Ryan
+            { userId: 'U07NKS9S8GZ', seats: 21 }, // Ryan
         ],
         shortName: "(Independent) Ryan",
         seats: 21
@@ -100,9 +102,9 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.Peanut]: {
         name: "Peanut Gallery",
         seatholders: [
-            'U089924LMK8', // Astra
-            'U079YUX7220', // Lenny
-            'U08EMT46G3V', // Lynn
+            { userId: 'U089924LMK8', seats: 1 }, // Astra
+            { userId: 'U079YUX7220', seats: 1 }, // Lenny
+            { userId: 'U08EMT46G3V', seats: 1 }, // Lynn
         ],
         shortName: "Peanut Gallery",
         seats: 3

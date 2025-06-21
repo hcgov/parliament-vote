@@ -1,0 +1,37 @@
+name: Parliament Config Change
+
+on:
+  push:
+    paths:
+      - 'parliament.ts'
+  pull_request:
+    paths:
+      - 'parliament.ts'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run scripts/check-parliament.ts
+        env:
+            SEND_SLACK_NOTIFICATION: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+            APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
+            DOSEM_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        run: pnpm tsx scripts/check-parliament.ts
