@@ -74,7 +74,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     [PartiesEnum.Colon3]: {
         name: ":3 Party",
         seatholders: [
-            { userId: 'U08JMV3PEGN', seats: 22 }, // Emma
+            { userId: 'U0915TRKB6U', seats: 22 }, // Emma
         ],
         shortName: ":3",
         seats: 22
