@@ -10,7 +10,7 @@ export async function voting(ctx: SlackActionMiddlewareArgs<BlockButtonAction> &
     const rowId = ctx.action.value!;
 
     // First, check if the user CAN indeed vote:
-    const userParty = Object.values(Parties).find(party => party.seatholders.includes(userId))
+    const userParty = Object.values(Parties).find(party => party.seatholders.find(seatholder => seatholder.userId === userId))
 
     if (!userParty) {
         return await ctx.client.chat.postEphemeral({
