@@ -1,6 +1,6 @@
 import type { AllMiddlewareArgs, BlockButtonAction, SlackActionMiddlewareArgs, StringIndexed } from "@slack/bolt";
 
-import { Parties } from "../parliament";
+import { Parties, IS_PARLIAMENT_IN_SESSION } from "../parliament";
 import sql from "../postgres";
 
 export async function voting(ctx: SlackActionMiddlewareArgs<BlockButtonAction> & AllMiddlewareArgs<StringIndexed>, favour: 'in_favour' | 'not_in_favour') {
@@ -8,6 +8,15 @@ export async function voting(ctx: SlackActionMiddlewareArgs<BlockButtonAction> &
     // Metadata
     const userId = ctx.body.user.id;
     const rowId = ctx.action.value!;
+
+    if (!IS_PARLIAMENT_IN_SESSION) {
+        return await ctx.client.chat.postEphemeral({
+            channel: process.env.CHAMBER_CHANNEL_ID,
+            user: userId,
+            // Hey @user, parliament is not in session, and therefore votes cannot be cast. If this is a mistake, please reach out in #dosem.
+            text: `Hey <@${userId}>, parliament is not in session, and therefore votes cannot be cast. If this is a mistake, please reach out in <#C08HSAVG482>.`
+        })
+    }
 
     // First, check if the user CAN indeed vote:
     const userParty = Object.values(Parties).find(party => party.seatholders.find(seatholder => seatholder.userId === userId))
