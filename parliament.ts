@@ -1,4 +1,4 @@
-export const IS_PARLIAMENT_IN_SESSION = false;
+export const IS_PARLIAMENT_IN_SESSION = true;
 
 // This file should be kept up to date with the current assembly/prime minister.
 export enum PartiesEnum {
