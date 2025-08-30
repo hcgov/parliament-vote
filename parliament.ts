@@ -102,7 +102,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             }
         ],
         shortName: 'WME',
-        seats: 10
+        seats: 7
     },
 
     [PartiesEnum.Lexm]: {
@@ -114,7 +114,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             }
         ],
         shortName: '(Independent) lexm',
-        seats: 25
+        seats: 24
     },
 
     [PartiesEnum.WSP]: {
