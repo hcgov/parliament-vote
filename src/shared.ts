@@ -30,8 +30,8 @@ export async function voting(ctx: SlackActionMiddlewareArgs<BlockButtonAction> &
         })
     }
 
-    // How many seats the user has: this may be inaccurate if there are multiple seatholders
-    const seats = Math.floor(userParty.seats / userParty.seatholders.length);
+    // How many seats the user has: this should take into account multiple seatholders.
+    const seats = userParty.seatholders.find(seatholder => seatholder.userId === userId)!.seats;
 
     const propositionRes = await sql<{
         list_row_id: string,
