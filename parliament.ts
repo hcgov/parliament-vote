@@ -66,7 +66,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             }
         ],
         shortName: ":3",
-        seats: 44
+        seats: 30
     },
 
     [PartiesEnum.PAR]: {
