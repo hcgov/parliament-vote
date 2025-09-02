@@ -150,4 +150,4 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     }
 }
 
-export const PRIME_MINISTER = "U0915TRKB6U" // Emma
+export const PRIME_MINISTER = "" // Emma
