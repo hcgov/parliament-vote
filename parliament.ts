@@ -54,7 +54,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             },
             {
                 userId: 'U0915TRKB6U', // Emma
-                seats: 14
+                seats: 0 // 14 upon end of suspension
             },
             {
                 userId: 'U08JN012F7G', // Hayden
