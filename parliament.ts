@@ -146,6 +146,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             },   
             {
                 userId: 'U04CBLNSVH6', // Dispherical  
+                seats: 1
             },
         ],
         seats: 4,
