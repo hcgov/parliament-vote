@@ -54,7 +54,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             },
             {
                 userId: 'U0915TRKB6U', // Emma
-                seats: 0 // 14 upon end of suspension
+                seats: 14 
             },
             {
                 userId: 'U08JN012F7G', // Hayden
@@ -66,7 +66,7 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             }
         ],
         shortName: ":3",
-        seats: 30
+        seats: 44
     },
 
     [PartiesEnum.PAR]: {
@@ -143,9 +143,12 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             {
                 userId: 'U079YUX7220', // Lenny
                 seats: 1
-            },            
+            },   
+            {
+                userId: 'U04CBLNSVH6', // Dispherical  
+            },
         ],
-        seats: 3,
+        seats: 4,
         shortName: "Peanut Gallery"
     }
 }
