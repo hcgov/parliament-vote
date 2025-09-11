@@ -53,12 +53,8 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
                 seats: 10
             },
             {
-                userId: 'U0915TRKB6U', // Emma
-                seats: 14 
-            },
-            {
                 userId: 'U08JN012F7G', // Hayden
-                seats: 10
+                seats: 24
             },
             {
                 userId: 'U093T2F9UKW', // Birdy
@@ -154,4 +150,4 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
     }
 }
 
-export const PRIME_MINISTER = "" // Emma
+export const PRIME_MINISTER = "U081C6XT885" // Sahana
