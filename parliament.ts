@@ -149,5 +149,3 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         shortName: "Peanut Gallery"
     }
 }
-
-export const PRIME_MINISTER = "U081C6XT885" // Sahana

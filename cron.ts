@@ -39,17 +39,7 @@ cron.schedule('0 0 * * *', async () => {
                 { inFavourSeats: 0, againstSeats: 0 }
             );
 
-            const didVotePass = (() => {
-                const primeMinisterVote = votes.find(vote => vote.user_id == PRIME_MINISTER);
-
-                if (primeMinisterVote && primeMinisterVote.in_favour) {
-                    // Needs 1/2 total votes to pass
-                    return inFavourSeats > ((inFavourSeats + againstSeats) * (1/2))
-                } else {
-                    // Needs 2/3 total votes to pass
-                    return inFavourSeats > ((inFavourSeats + againstSeats) * (2/3)) 
-                }
-            })();
+            const didVotePass = inFavourSeats > ((inFavourSeats + againstSeats) * (1/2))
 
             await fetch(process.env.EDIT_WORKFLOW, {
                 method: 'POST',
