@@ -17,30 +17,6 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
     ee.once(responseUUID, async ([title, status, description, author, type, date_closes]) => {
         const itemUrl = `https://hackclub.slack.com/lists/T0266FRGM/${process.env.LIST_ID}?record_id=${inputs.itemId}`;
 
-        // This will always run, I just have it in an if-block so I can disable it later.
-        if (true) {
-            const uuid2 = randomUUID()
-            ee.once(uuid2, () => { })
-            await fetch(process.env.EDIT_WORKFLOW, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    uuid: uuid2,
-                    row_id: inputs.itemId,
-                    status: "In Draft"
-                })
-            })
-
-            return await ctx.client.chat.postMessage({
-                channel: inputs.editor,
-                text:
-                    `Hi there! You updated the status of *<${itemUrl}|${title}>* to \`Voting Open\`. However, due to <https://hackclub.slack.com/archives/C0C78SG9L/p1758150775836749|current circumstances>, propositions cannot be put into voting.\n\n` +
-                    `I've put your proposition back into draft. I recommend you back it up somewhere on your own machine, as it is unexpected what could happen to the Slack.`
-            })            
-        }
-
         if (!IS_PARLIAMENT_IN_SESSION) {
             const uuid2 = randomUUID()
             ee.once(uuid2, () => { })
