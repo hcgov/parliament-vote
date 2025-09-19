@@ -4,8 +4,6 @@ import { randomUUID } from "node:crypto";
 import ee from "./events";
 import { app } from '.';
 
-import { PRIME_MINISTER } from './parliament';
-
 // Run every day at 12:00am UTC
 cron.schedule('0 0 * * *', async () => {
     const propositions = await sql<{ 
