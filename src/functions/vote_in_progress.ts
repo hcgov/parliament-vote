@@ -158,7 +158,7 @@ export default async function VoteInProgress(ctx: SlackCustomFunctionMiddlewareA
                                 },
                                 {
                                     "type": "text",
-                                    "text": "\n\nView more about this proposition and vote if you support it. This bill/act will need 2/3rds of the total votes submitted, unless the PM votes in favor, in which case 1/2 of the total votes will be needed. If you take issue, follow the link below and use comments to debate. It is your duty to vote, either yes or no.\n\nVotes are by seats, not members.\n"
+                                    "text": "\n\nView more about this proposition and vote if you support it. This bill/act will need 1/2 of the total submitted votes to pass. If you take issue, follow the link below and use comments to debate. It is your duty to vote, either yes or no.\n\nVotes are by seats, not members.\n"
                                 }
                             ]
                         }
