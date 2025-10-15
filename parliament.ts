@@ -6,7 +6,6 @@ export enum PartiesEnum {
     AVCAP,
     Colon3,
     PAR,
-    WSP,
     XREP,
     WME,
 
@@ -106,23 +105,11 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
         seatholders: [
             {
                 userId: 'U079UHJDBRT', // Lennier
-                seats: 24
+                seats: 41
             }
         ],
         shortName: '(Independent) lexm',
-        seats: 24
-    },
-
-    [PartiesEnum.WSP]: {
-        name: "Whitestone Inc., Political Division",
-        seatholders: [
-            {
-                userId: 'U02KQ9WQT0A', // Krish
-                seats: 17
-            }
-        ],
-        seats: 17,
-        shortName: 'WSP'
+        seats: 41
     },
 
     [PartiesEnum.Peanut]: {
@@ -139,9 +126,9 @@ export const Parties: Record<PartiesEnum, PartyInformation> = {
             {
                 userId: 'U079YUX7220', // Lenny
                 seats: 1
-            },   
+            },
             {
-                userId: 'U04CBLNSVH6', // Dispherical  
+                userId: 'U04CBLNSVH6', // Dispherical
                 seats: 1
             },
         ],
